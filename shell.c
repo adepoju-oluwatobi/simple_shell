@@ -1,4 +1,9 @@
 #include "main.h"
+#include <stdio.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <sys/types.h>
+#include <string.h>
 /**
  * main - This is the Simple_Shell Main Code
  * @argc: arguments passed in program
