@@ -10,7 +10,7 @@
 void exec_cmd(char **tokenized_cmd, int cmd_type)
 {
 	void (*func)(char **cmd);
-	char *sh_name = NULL
+	char *sh_name = NULL;
 
 	if (cmd_type == EXTERNAL_CMD)
 	{
