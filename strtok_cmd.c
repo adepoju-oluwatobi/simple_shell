@@ -1,13 +1,10 @@
 #include "main.h"
 /**
- *
  *strtok_cmd - function: tokenizes a string in the program
  *@string: shows the string
  *@delim: delimiter: tokenizer
  *@save_ptr: pointer: keeps tracks of the tokens
- *
  *Return: returns next token in line for tokenization
- *
  */
 char *strtok_cmd(char *string, char *delim, char **save_ptr)
 {

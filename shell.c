@@ -1,9 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <sys/types.h>
-#include <string.h>
 /**
  * main - This is the Simple_Shell Main Code
  * @argc: arguments passed in program
@@ -12,12 +7,8 @@
  */
 int main(int argc __attribute__((unused)), char **argv)
 {
-	char **current_cmd = NULL;
-	char **cmds = NULL;
-	char *line = NULL;
-	int status = 0;
-	int sh_name = argv[0];  // Assign a value to sh_name
-	int i, type_cmd = 0;
+	char **current_cmd = NULL, **cmds = NULL, *line = NULL;
+	int status = 0, sh_name = argv[0], i, type_cmd = 0;
 	size_t n = 0;
 
 	signal(SIGINT, ctrl_c_handler);
@@ -51,6 +42,5 @@ int main(int argc __attribute__((unused)), char **argv)
 		free(cmds);
 	}
 	free(line);
-
 	return (status);
 }
