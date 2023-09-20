@@ -10,10 +10,10 @@
  * @argv: arguments inj the programm yet to be parsed
  * Return: 0 on when the program is success
  */
-int main(int argc __attribute__((unused)), char **argv)
+int main(void)
 {
 	char **current_cmd = NULL, **cmds = NULL, *line = NULL;
-	int status = 0, sh_name = argv[0], i, type_cmd = 0;
+	int status = 0, i, type_cmd = 0;
 	size_t n = 0;
 
 	signal(SIGINT, ctrl_c_handler);
