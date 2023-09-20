@@ -27,31 +27,30 @@ int main(int argc __attribute__((unused)), char **argv)
 		non_interactive_mode();
 		print(" :)> ", STDOUT_FILENO);
 		if (getline(&line, &n, stdin) == -1)
-	{
-		free(line);
-     exit(status);
-        }
-        rm_newline(line);
-        rm_comment(line);
-        cmds = cmd_tokenizer(line, ";");
+		{
+			free(line);
+			exit(status);
+		}
+		rm_newline(line);
+		rm_comment(line);
+		cmds = cmd_tokenizer(line, ";");
 
-        for (i = 0; cmds[i] != NULL; i++)
-        {
-            current_cmd = cmd_tokenizer(cmds[i], " ");
-            if (current_cmd[0] == NULL)
-            {
-                free(current_cmd);
-                break;
-            }
-            type_cmd = parse_cmd(current_cmd[0]);
+		for (i = 0; cmds[i] != NULL; i++)
+		{
+			current_cmd = cmd_tokenizer(cmds[i], " ");
+			if (current_cmd[0] == NULL)
+			{
+				free(current_cmd);
+				break;
+			}
 
-            /* initializer -   */
-            init(current_cmd, type_cmd);
-            free(current_cmd);
-        }
-        free(cmds);
-    }
-    free(line);
+			type_cmd = parse_cmd(current_cmd[0]);
+			init(current_cmd, type_cmd);
+			free(current_cmd);
+		}
+		free(cmds);
+	}
+	free(line);
 
-    return (status);
+	return (status);
 }
