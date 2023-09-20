@@ -12,24 +12,24 @@
  */
 int main(int argc __attribute__((unused)), char **argv)
 {
-    char **current_cmd = NULL;
-    char **cmds = NULL;
-    char *line = NULL;
-    int status = 0;
-    int sh_name = argv[0];  // Assign a value to sh_name
-    int i, type_cmd = 0;
-    size_t n = 0;
+	char **current_cmd = NULL;
+	char **cmds = NULL;
+	char *line = NULL;
+	int status = 0;
+	int sh_name = argv[0];  // Assign a value to sh_name
+	int i, type_cmd = 0;
+	size_t n = 0;
 
-    signal(SIGINT, ctrl_c_handler);
+	signal(SIGINT, ctrl_c_handler);
 
-    while (1)
-    {
-        non_interactive_mode();
-        print(" :)> ", STDOUT_FILENO);
-        if (getline(&line, &n, stdin) == -1)
-        {
-            free(line);
-            exit(status);
+	while (1)
+	{
+		non_interactive_mode();
+		print(" :)> ", STDOUT_FILENO);
+		if (getline(&line, &n, stdin) == -1)
+	{
+		free(line);
+     exit(status);
         }
         rm_newline(line);
         rm_comment(line);
