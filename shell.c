@@ -6,8 +6,6 @@
 #include <string.h>
 /**
  * main - This is the Simple_Shell Main Code
- * @argc: arguments passed in program
- * @argv: arguments inj the programm yet to be parsed
  * Return: 0 on when the program is success
  */
 int main(void)
